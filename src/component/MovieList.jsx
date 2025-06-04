@@ -50,7 +50,7 @@ const MovieList = ({
     );
   }
   if (error) {
-    return <p className="text-red-900">Error: {error}</p>;
+    return <p className="text-red-900 flex justify-center mt-10">Error: {error}</p>;
   }
 
   // Handle case where no movies are found after filtering/searching
