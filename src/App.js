@@ -46,7 +46,7 @@ function App() {
       const data = response.data.results;
       setSearchedMovie(data);
       // setInput(searchedMovie)
-      console.log("search result", data);
+      // console.log("search result", data);
     } catch (error) {
       console.error("error fetching search result", error);
       setError("Failed to fetch movie");
@@ -67,7 +67,7 @@ function App() {
       const movieGenreNames = filteredMovies.genre_ids.map(
         (id) => genreType[id]
       );
-      console.log("filterresult", movieGenreNames);
+      // console.log("filterresult", movieGenreNames);
       return movieGenreNames.includes(genreChecker);
     });
 
@@ -76,7 +76,7 @@ function App() {
     } else {
       moviesToRender = filteredMovies;
     }
-    console.log("filteredmoviesdata:", filteredMovies);
+    // console.log("filteredmoviesdata:", filteredMovies);
     setDisplayByGenre(moviesToRender);
   }, [genreChecker, movieList, searchedMovie, input]);
 
@@ -169,7 +169,7 @@ function App() {
 
   const handleUserInput = (e) => {
     setInput(e.target.value);
-    console.log(input);
+    // console.log(input);
   };
   return (
     <>
@@ -190,7 +190,7 @@ function App() {
             onSubmit={handleForm}
             className={` transition-all duration-300 border-2 w-[80%] ml-5 ${
               changeWidth ? "sm:w-[60%] && border-red-900" : "sm:w-[20%]"
-            } mr-10 rounded`}
+            } mr-10 rounded sm:hidden`}
           >
             <div className="flex items-center gap-x-2 py-1 border-none  bg-white rounded ">
               <FaSearch className="text-[20px] mx-4 bg-white text-[#CCCDDE] " />
@@ -212,7 +212,7 @@ function App() {
           onSubmit={handleForm}
           className={` transition-all duration-300 border-2 bg-white  ml-5 ${
             changeWidth ? "sm:w-[60%] && border-red-900" : "sm:w-[20%]"
-          } mr-10 rounded hidden sm:flex md:hidden`}
+          } mr-10 rounded hidden sm:flex`}
         >
           <div className="flex items-center gap-x-2 py-1 border-none  bg-white rounded ">
             <FaSearch className="text-[20px] mx-4 bg-white text-[#CCCDDE] " />

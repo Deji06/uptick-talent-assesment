@@ -33,9 +33,9 @@ const MovieList = ({
         });
         setGenre(res.data.genres);
         setGenreChecker(res.data.genres.name);
-        console.log("selected genre:", res.data.genres.name);
+        // console.log("selected genre:", res.data.genres.name);
 
-        console.log("genre data:", res.data);
+        // console.log("genre data:", res.data);
       } catch (error) {
         console.log("error fetching genre:", error);
       }
@@ -64,17 +64,14 @@ const MovieList = ({
 
   const handleGenre = (e) => {
     setGenreChecker(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
-
-  // tmdbApi = '187f3133b748cacd5f072c3a3a971e7c'
-  // eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxODdmMzEzM2I3NDhjYWNkNWYwNzJjM2EzYTk3MWU3YyIsIm5iZiI6MTcwMDQ0MTE4OC42MjcsInN1YiI6IjY1NWFhYzY0YjU0MDAyMTRjZjNhYWM5ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7NWmLY7s7qKPqeV035LscjqNsJRHlV_8ypCnChOYzUA
 
   return (
     <div className="mx-5 sm:mt-5 h-auto">
       {/* mobile display */}
       {displayMenu && (
-        <div className="flex sm:flex-row flex-col sm:items-center justify-between transition-all duration-300">
+        <div className="flex sm:flex-row flex-col sm:items-center justify-between transition-all duration-300 sm:hidden">
           <div className="flex items-center gap-x-5 mt-5">
             <p className="sm:px-5 text-white sm:text-[30px] text-[20px]">
               latest releases
@@ -128,7 +125,7 @@ const MovieList = ({
         </div>
       )}
       {/* big screen display */}
-      <div className="sm:flex-row flex-col sm:items-center justify-between transition-all duration-300 hidden sm:flex md:hidden">
+      <div className="sm:flex-row flex-col sm:items-center justify-between transition-all duration-300 hidden sm:flex">
         <div className="flex items-center gap-x-5 mt-5">
           <p className="sm:px-5 text-white sm:text-[30px] text-[20px]">
             latest releases
