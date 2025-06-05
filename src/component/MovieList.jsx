@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { LoaderCircle } from 'lucide-react';
 
 const MovieList = ({
   // setSearchedMovie,
@@ -46,7 +47,10 @@ const MovieList = ({
 
   if (loading) {
     return (
-      <p className="text-red-900 flex justify-center mt-10">Loading....</p>
+     <div className="flex justify-center items-center h-48 text-red-900">
+        <LoaderCircle className="animate-spin text-red-600" size={48} /> 
+        <p className="ml-3 text-lg text-red-900">Loading movies...</p> 
+      </div>
     );
   }
   if (error) {

@@ -162,7 +162,7 @@ function App() {
 
   const handleForm = (e) => {
     e.preventDefault();
-    setInput("");
+    // setInput("");
   };
 
   // handle hamburgger
