@@ -46,7 +46,7 @@ const MovieList = ({
 
   if (loading) {
     return (
-      <p className="text-red-900 flex justify-center mt-10">loading....</p>
+      <p className="text-red-900 flex justify-center mt-10">Loading....</p>
     );
   }
   if (error) {
@@ -54,13 +54,13 @@ const MovieList = ({
   }
 
   // Handle case where no movies are found after filtering/searching
-  if (displayByGenre.length === 0) {
-    return (
-      <p style={{ color: "black", textAlign: "center", marginTop: "20px" }}>
-        No movies found for your selection.
-      </p>
-    );
-  }
+  // if (displayByGenre.length === 0) {
+  //   return (
+  //     <p className="text-red-900 flex justify-center mt-20 text-[20px]">
+  //      Sorry!! No movies with such title.....
+  //     </p>
+  //   );
+  // }
 
   const handleGenre = (e) => {
     setGenreChecker(e.target.value);
@@ -183,7 +183,7 @@ const MovieList = ({
         {displayByGenre.map((movie) => (
           <div key={movie.id} className="w-fit px-5 space-y-3">
             <img
-              className="w-[100%]"
+              className="w-[100%] text-red-900"
               src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
               alt="movie jpg"
             />
@@ -206,7 +206,7 @@ const MovieList = ({
       </div>
       {displayByGenre.length === 0 && genreChecker !== "Genre" && (
         <p className="text-red-900 flex justify-center text-[30px]">
-          sorry!! no movie to display in this category....
+          sorry!! no movies to display....
         </p>
       )}
     </div>
