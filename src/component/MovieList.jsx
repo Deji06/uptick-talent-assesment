@@ -103,7 +103,7 @@ const MovieList = ({
             </select>
           </div>
 
-          <div className="flex  gap-x-2 mr-5 mt-5 sm:mt-0">
+          <div className="flex flex-col sm:flex-row gap-y-3  gap-x-2 mr-5 mt-5 sm:mt-0">
             <div className="flex items-center space-x-2">
               <label htmlFor="" className="text-red-900">
                 From:
@@ -112,6 +112,7 @@ const MovieList = ({
                 type="date"
                 value={searchMoviesFrom}
                 onChange={(e) => setSearchMoviesFrom(e.target.value)}
+                className="outline-none"
               />
             </div>
 
@@ -123,6 +124,8 @@ const MovieList = ({
                 type="date"
                 value={searchMoviesTo}
                 onChange={(e) => setSearchMoviesTo(e.target.value)}
+                className="outline-none"
+
               />
             </div>
           </div>
