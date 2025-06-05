@@ -103,7 +103,7 @@ const MovieList = ({
             </select>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-y-3  gap-x-2 mr-5 mt-5 sm:mt-0">
+          <div className="flex flex-col sm:flex-row gap-y-3 gap-x-2 mr-5 mt-5 sm:mt-0">
             <div className="flex items-center space-x-2">
               <label htmlFor="" className="text-red-900">
                 From:
